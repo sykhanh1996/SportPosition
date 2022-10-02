@@ -1,4 +1,13 @@
 {
+  "name": "sport_position",
+  "version": "1.0.0",
+  "description": "A mini website for searching position in any sport",
+  "main": "src/server.ts",
+  "author": "Khanh Sy",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon src/server.ts"
+  },
   "dependencies": {
     "express": "^4.18.1"
   },
