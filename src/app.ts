@@ -7,7 +7,7 @@ import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
 import cors from 'cors';
-
+import { errorMiddleware } from '@core/middleware';
 
 class App {
     public port: string | number;
@@ -21,10 +21,11 @@ class App {
         this.port = process.env.PORT || 15000;
         this.production = process.env.NODE_ENV == 'production' ? true : false;
 
-
         this.connectToDatabase();
-        this.initializeRoutes(routes);
         this.initializeMiddleware();
+        this.initializeRoutes(routes);
+        this.initializeErrorMiddleware();
+
     }
 
     public listen() {
@@ -53,6 +54,9 @@ class App {
         this.app.use(express.urlencoded({ extended: true }));
     }
 
+    private initializeErrorMiddleware() {
+        this.app.use(errorMiddleware);
+    }
     private connectToDatabase() {
         const connectString = process.env.MONGODB_URI;
         if (!connectString) {
