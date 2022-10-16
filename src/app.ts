@@ -1,5 +1,5 @@
 import { Route } from '@core/interfaces';
-import { Logger } from './core/utils';
+import { Logger } from '@core/utils';
 import express from 'express';
 import http from 'http';
 import mongoose from 'mongoose';
