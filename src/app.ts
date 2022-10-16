@@ -71,8 +71,7 @@ class App {
                 // useCreateIndex: true,
             })
             .catch((reason) => {
-                console.log(reason);
-                // Logger.error(reason);
+                Logger.error(reason);
             });
         Logger.info('Database connected...');
     }
