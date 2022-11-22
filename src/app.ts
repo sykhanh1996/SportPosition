@@ -8,6 +8,8 @@ import hpp from 'hpp';
 import morgan from 'morgan';
 import cors from 'cors';
 import { errorMiddleware } from '@core/middleware';
+import YAML from 'yamljs';
+import swaggerUi from 'swagger-ui-express';
 
 class App {
     public port: string | number;
@@ -18,13 +20,14 @@ class App {
     constructor(routes: Route[]) {
         this.app = express();
         this.server = http.createServer(this.app);
-        this.port = process.env.PORT || 15000;
+        this.port = process.env.PORT || 5000;
         this.production = process.env.NODE_ENV == 'production' ? true : false;
 
         this.connectToDatabase();
         this.initializeMiddleware();
         this.initializeRoutes(routes);
         this.initializeErrorMiddleware();
+        this.initializeSwagger();
 
     }
 
@@ -74,6 +77,12 @@ class App {
                 Logger.error(reason);
             });
         Logger.info('Database connected...');
+    }
+
+    private initializeSwagger() {
+        const swaggerDocument = YAML.load('./src/swagger.yaml');
+
+        this.app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     }
 }
 
