@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Main = () => {
+const AccountRoute = () => {
   return (
     <div>
-      Test khanh
+      
     </div>
   )
 }
 
-export default Main
+export default AccountRoute
