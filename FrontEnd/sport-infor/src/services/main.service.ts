@@ -1,4 +1,5 @@
 import env from 'react-dotenv';
+import { api } from '../helpers';
 
 const login = async (email: string, password: string) => {
     const body = { email, password };
@@ -6,3 +7,8 @@ const login = async (email: string, password: string) => {
       return response.data;
     });
   };
+
+  
+export const mainService = {
+  login,
+};

@@ -19,4 +19,7 @@
 
 
 
--- yarn 
+-- yarn add redux-persist
+-- yarn add @types/redux-persist
+
+-- yarn add axios
