@@ -71,4 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### Install lib for Project
+Using to config webpack
 -- yarn add customize-cra react-app-rewired --dev
+
+using to change root file 
+--yarn add --dev babel-plugin-module-resolver
