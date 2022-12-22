@@ -69,10 +69,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
 ### Install lib for Project
+
 Using to config webpack
 -- yarn add customize-cra react-app-rewired --dev
 
-using to change root file 
+using to change root file
 --yarn add --dev babel-plugin-module-resolver
+
+add scss lib
+--yarn add sass --dev
+
+--yarn add normalize.css --save
