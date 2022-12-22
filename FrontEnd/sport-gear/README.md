@@ -81,3 +81,6 @@ add scss lib
 --yarn add sass --dev
 
 --yarn add normalize.css --save
+
+--yarn add react-router-dom
+--yarn add react --save
